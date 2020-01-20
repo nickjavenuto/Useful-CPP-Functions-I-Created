@@ -1,0 +1,11 @@
+double findMedian(int* array, int size)
+{
+	double middle = size / 2;
+	double median; 
+	if (size % 2 == 0)
+		median = (double((array[(int(middle)-1)]) + (array[int(middle)]))) / 2;
+	else
+		median = array[int(middle)];
+	return median; 
+
+}
