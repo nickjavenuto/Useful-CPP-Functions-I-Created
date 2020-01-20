@@ -1,0 +1,30 @@
+int findMode(int *array, int size)
+{
+	int mode=-1;
+	int totalA = 0, totalB = 0, totalC = 0; 
+	for (int cnt = 0; cnt < size; cnt++)
+	{
+		totalA = 0; 
+		for (int cnt2 = 0; cnt2 < size; cnt2++)
+		{
+			if (*(array + cnt) == *(array + cnt2))
+			{
+				totalA += 1;
+
+			}
+		}
+		if (totalA > totalB)
+		{
+			mode = *(array + cnt);
+			totalB = totalA;
+		}
+		else if (totalA == totalB && mode != *(array+cnt))
+			totalC = totalB;
+	}
+	if (totalC == totalB)
+		return -1;
+	else
+		return mode; 
+
+
+}
